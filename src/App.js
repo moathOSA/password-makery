@@ -24,8 +24,8 @@ function App() {
     if (countConditions.length === 0) {
       return notify("select at least one conditions", true);
     }
-    if (passwordLength < 4) {
-      return notify("password length can't be less than 4", true);
+    if (passwordLength < 8) {
+      return notify("password length can't be less than 8", true);
     }
     if (passwordLength > 20) {
       return notify("password length can't be more than 20", true);
@@ -47,7 +47,7 @@ function App() {
   };
   const decrease = () => {
     setPasswordLength(passwordLength - 1);
-    if (passwordLength === 4) {
+    if (passwordLength === 8) {
       setPasswordLength(passwordLength);
     }
   };
@@ -129,7 +129,7 @@ function App() {
                 id="password-strength"
                 name="password-strength"
                 max="20"
-                min="4"
+                min="8"
               />
               <button onClick={increase} class="plus"></button>
             </div>
